@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/FirstFragment">
+
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.example.vanzare_cumpararealpha.FirstFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SecondFragment"
+        android:name="com.example.vanzare_cumpararealpha.SecondFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_second">
+
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_SecondFragment_to_thirdFragment"
+            app:destination="@id/thirdFragment" />
+        <action
+            android:id="@+id/action_SecondFragment_to_overFragment"
+            app:destination="@id/overFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="com.example.vanzare_cumpararealpha.ThirdFragment"
+        android:label="fragment_third"
+        tools:layout="@layout/fragment_third" >
+        <action
+            android:id="@+id/action_thirdFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_thirdFragment_to_fourthFragment"
+            app:destination="@id/fourthFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fourthFragment"
+        android:name="com.example.vanzare_cumpararealpha.FourthFragment"
+        android:label="fragment_fourth"
+        tools:layout="@layout/fragment_fourth" >
+        <action
+            android:id="@+id/action_fourthFragment_to_thirdFragment"
+            app:destination="@id/thirdFragment" />
+        <action
+            android:id="@+id/action_fourthFragment_to_sellerFragment"
+            app:destination="@id/sellerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fifthFragment5"
+        android:name="com.example.vanzare_cumpararealpha.FifthFragment"
+        android:label="fragment_fifth"
+        tools:layout="@layout/fragment_fifth" >
+        <action
+            android:id="@+id/action_fifthFragment5_to_sixthFragment"
+            app:destination="@id/sixthFragment" />
+        <action
+            android:id="@+id/action_fifthFragment5_to_sellerFragment"
+            app:destination="@id/sellerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sixthFragment"
+        android:name="com.example.vanzare_cumpararealpha.SixthFragment"
+        android:label="SixthFragment" >
+        <action
+            android:id="@+id/action_sixthFragment_to_fifthFragment5"
+            app:destination="@id/fifthFragment5" />
+        <action
+            android:id="@+id/action_sixthFragment_to_seventhFragment"
+            app:destination="@id/seventhFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/seventhFragment"
+        android:name="com.example.vanzare_cumpararealpha.SeventhFragment"
+        android:label="SeventhFragment" >
+        <action
+            android:id="@+id/action_seventhFragment_to_sixthFragment"
+            app:destination="@id/sixthFragment" />
+        <action
+            android:id="@+id/action_seventhFragment_to_eigthFragment"
+            app:destination="@id/eigthFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eigthFragment"
+        android:name="com.example.vanzare_cumpararealpha.EigthFragment"
+        android:label="fragment_eigth"
+        tools:layout="@layout/fragment_eigth" >
+        <action
+            android:id="@+id/action_eigthFragment_to_nintethFragment"
+            app:destination="@id/nintethFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nintethFragment"
+        android:name="com.example.vanzare_cumpararealpha.NintethFragment"
+        android:label="NintethFragment" >
+        <action
+            android:id="@+id/action_nintethFragment_to_eigthFragment"
+            app:destination="@id/eigthFragment" />
+        <action
+            android:id="@+id/action_nintethFragment_to_tenthFragment"
+            app:destination="@id/tenthFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tenthFragment"
+        android:name="com.example.vanzare_cumpararealpha.TenthFragment"
+        android:label="fragment_tenth"
+        tools:layout="@layout/fragment_tenth" >
+        <action
+            android:id="@+id/action_tenthFragment_to_nintethFragment"
+            app:destination="@id/nintethFragment" />
+        <action
+            android:id="@+id/action_tenthFragment_to_overFragment"
+            app:destination="@id/overFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/overFragment"
+        android:name="com.example.vanzare_cumpararealpha.OverFragment"
+        android:label="fragment_over"
+        tools:layout="@layout/fragment_over" >
+        <argument
+            android:name="message"
+            app:argType="string"
+            android:defaultValue="default" />
+    </fragment>
+    <fragment
+        android:id="@+id/sellerFragment"
+        android:name="com.example.vanzare_cumpararealpha.SellerFragment"
+        android:label="fragment_seller"
+        tools:layout="@layout/fragment_seller" >
+        <action
+            android:id="@+id/action_sellerFragment_to_fifthFragment5"
+            app:destination="@id/fifthFragment5" />
+    </fragment>
+</navigation>

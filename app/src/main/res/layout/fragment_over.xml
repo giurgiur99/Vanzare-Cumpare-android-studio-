@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OverFragment">
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Datele masinii au fost salavate. Alegeti unde sa salvati documentul creat."
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.438" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="178dp"
+        android:layout_height="250dp"
+        android:src="@drawable/contract"
+        app:layout_constraintBottom_toTopOf="@+id/textView12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="369dp"
+        android:layout_height="241dp"
+        android:layout_marginTop="361dp"
+        android:text="Persoana care înstrăinează menţionată la punctul (1) declară ca mijlocul de transport este proprietatea sa, liber de orice sarcini. De asemenea, declară ca a predat persoanei care dobândeşte menţionat la punctul (2) vehiculul, cheile, certificatul de înmatriculare şi cartea de identitate a vehiculului, primind de la acesta preţul prevăzut la punctul (4). Persoana care dobândeşte menţionată la punctul (2) declară ca a primit de la vânzătorul menţionat la punctul (1) mijlocului de transport, cheile, certificatul de înmatriculare şi cartea de identitate a vehiculului, achitând persoanei care înstrăinează preţul menţionat la punctul (4). Anexe la contract :  Da  Nu Atât persoana care înstrăinează, cât şi dobânditorul declară, cunoscând prevederile Codului penal privind falsul şi uzul de fals că toate informaţiile înscrise în prezentul document corespund realităţii. Începând cu data semnării, dobânditorul are calitatea de proprietar de drept şi de fapt asupra mijlocului de transport ce face obiectul prezentului contract de înstrăinare-dobândire, preluând toate obligaţiile prevăzute de lege, inclusiv cele legate de transcrierea vehiculului pe numele sau, în maxim 30 de zile, de la data încheierii prezentului act"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/agreeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sunt de acord cu cele mentionate mai sus"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

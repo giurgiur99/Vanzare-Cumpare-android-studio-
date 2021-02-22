@@ -10,11 +10,11 @@ import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 
 public class SecondFragment extends Fragment {
-    private EditText sellerName, sellerCounty;
-    private Button nextButton;
 
     @Override
     public View onCreateView(
@@ -26,6 +26,13 @@ public class SecondFragment extends Fragment {
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        EditText sellerName = view.findViewById(R.id.nameTextBox);
+        EditText sellerCounty = view.findViewById(R.id.countyTextBox);
+        EditText sellerPostalCode = view.findViewById(R.id.postalCodeTextBox);
+        EditText sellerCity = view.findViewById(R.id.cityTextBox);
+        EditText sellerSector  = view.findViewById(R.id.sectorTextBox);
+
+        final NavController navController = Navigation.findNavController(view);
 
         view.findViewById(R.id.previousBtn).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,11 +46,18 @@ public class SecondFragment extends Fragment {
             @Override
             public void onClick(View view1) {
 
-                //System.out.println(sellerName.getText().toString());
+                User seller = new User();
+                seller.setName(sellerName.getText().toString());
+                seller.setCounty(sellerCounty.getText().toString());
+                seller.setPostalCode(sellerPostalCode.getText().toString());
+                seller.setCity(sellerCity.getText().toString());
+                seller.setSector(sellerSector.getText().toString());
 
+                SecondFragmentDirections.ActionSecondFragmentToThirdFragment action = SecondFragmentDirections.actionSecondFragmentToThirdFragment(seller);
+                navController.navigate(action);
 
-                NavHostFragment.findNavController(SecondFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_thirdFragment);
+                //NavHostFragment.findNavController(SecondFragment.this)
+                        //.navigate(R.id.action_SecondFragment_to_thirdFragment);
             }
         });
 

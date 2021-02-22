@@ -5,9 +5,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 
 
@@ -24,6 +27,14 @@ public class FifthFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
 
+        final NavController navController = Navigation.findNavController(view);
+
+        EditText buyerName = view.findViewById(R.id.buyerNameTextBox);
+        EditText buyerCounty = view.findViewById(R.id.buyerCountyTextBox);
+        EditText buyerPostalCode = view.findViewById(R.id.buyerPostalCodeTextBox);
+        EditText buyerCity = view.findViewById(R.id.buyerCityTextBox);
+        EditText buyerSector  = view.findViewById(R.id.buyerSectorTextBox);
+
         view.findViewById(R.id.prevBtn5).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -35,8 +46,18 @@ public class FifthFragment extends Fragment {
         view.findViewById(R.id.nextBtn5).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view1) {
-                NavHostFragment.findNavController(FifthFragment.this)
-                        .navigate(R.id.action_fifthFragment5_to_sixthFragment);
+
+                FifthFragmentArgs args = FifthFragmentArgs.fromBundle(getArguments());
+                User seller = args.getSeller();
+                User buyer = new User();
+                buyer.setName(buyerName.getText().toString());
+                buyer.setCounty(buyerCounty.getText().toString());
+                buyer.setPostalCode(buyerPostalCode.getText().toString());
+                buyer.setCity(buyerCity.getText().toString());
+                buyer.setSector(buyerSector.getText().toString());
+
+                FifthFragmentDirections.ActionFifthFragment5ToSixthFragment action = FifthFragmentDirections.actionFifthFragment5ToSixthFragment(buyer, seller);
+                navController.navigate(action);
             }
         });
 

@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 
 public class EigthFragment extends Fragment {
@@ -21,11 +23,18 @@ public class EigthFragment extends Fragment {
     }
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
 
+        final NavController navController = Navigation.findNavController(view);
+
+        EigthFragmentArgs args = EigthFragmentArgs.fromBundle(getArguments());
+        User seller = args.getBuyer();
+        User buyer = args.getBuyer();
+        System.out.println(seller.toString());
+
         view.findViewById(R.id.next8).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view1) {
-                NavHostFragment.findNavController(EigthFragment.this)
-                        .navigate(R.id.action_eigthFragment_to_nintethFragment);
+                EigthFragmentDirections.ActionEigthFragmentToNintethFragment action = EigthFragmentDirections.actionEigthFragmentToNintethFragment(buyer, seller);
+                navController.navigate(action);
             }
         });
 

@@ -2,9 +2,11 @@ package com.example.vanzare_cumpararealpha;
 
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -15,7 +17,6 @@ public class OverFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragmen
 
         return inflater.inflate(R.layout.fragment_over, container, false);
     }
@@ -24,10 +25,15 @@ public class OverFragment extends Fragment {
 
 
         view.findViewById(R.id.agreeBtn).setOnClickListener(new View.OnClickListener() {
-            @Override
+
+
+            OverFragmentArgs args = OverFragmentArgs.fromBundle(getArguments());
+            User seller = args.getSeller();
+            User buyer = args.getBuyer();
+            Car car = args.getCar();
             public void onClick(View view1) {
 
-
+                System.out.println(seller.toString() + "\n" + buyer.toString() + "\n" + car.toString());
             }
         });
 

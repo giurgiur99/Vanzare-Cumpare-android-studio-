@@ -5,9 +5,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 public class SixthFragment extends Fragment {
 
@@ -23,6 +26,19 @@ public class SixthFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
 
+        final NavController navController = Navigation.findNavController(view);
+
+        SixthFragmentArgs args = SixthFragmentArgs.fromBundle(getArguments());
+        User buyer = args.getBuyer();
+        User seller = args.getSeller();
+
+        EditText buyerStreet = view.findViewById(R.id.buyerStreetTextBox);
+        EditText buyerStreetNr= view.findViewById(R.id.buyerNrTextBox);
+        EditText buyerBl = view.findViewById(R.id.buyerBlTextBox);
+        EditText buyerSc = view.findViewById(R.id.buyerScTextBox);
+        EditText buyerAp = view.findViewById(R.id.buyerApartTextBox);
+
+
         view.findViewById(R.id.previousBtn6).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -34,8 +50,13 @@ public class SixthFragment extends Fragment {
         view.findViewById(R.id.nextBtn6).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view1) {
-                NavHostFragment.findNavController(SixthFragment.this)
-                        .navigate(R.id.action_sixthFragment_to_seventhFragment);
+                buyer.setStreet(buyerStreet.getText().toString());
+                buyer.setStreetNr(buyerStreetNr.getText().toString());
+                buyer.setBl(buyerBl.getText().toString());
+                buyer.setAp(buyerAp.getText().toString());
+
+                SixthFragmentDirections.ActionSixthFragmentToSeventhFragment action = SixthFragmentDirections.actionSixthFragmentToSeventhFragment(buyer, seller);
+                navController.navigate(action);
             }
         });
 

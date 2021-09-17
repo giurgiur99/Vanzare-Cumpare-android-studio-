@@ -142,6 +142,22 @@ public class Car implements Parcelable {
         dest.writeString(priceNr);
         dest.writeString(priceLetters);
     }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "manufacture='" + manufacture + '\'' +
+                ", model='" + model + '\'' +
+                ", identificationNumber='" + identificationNumber + '\'' +
+                ", capacity='" + capacity + '\'' +
+                ", licensePlate='" + licensePlate + '\'' +
+                ", nrCarte='" + nrCarte + '\'' +
+                ", manufactureYear='" + manufactureYear + '\'' +
+                ", euroCo2='" + euroCo2 + '\'' +
+                ", priceNr='" + priceNr + '\'' +
+                ", priceLetters='" + priceLetters + '\'' +
+                '}';
+    }
 }
 
 

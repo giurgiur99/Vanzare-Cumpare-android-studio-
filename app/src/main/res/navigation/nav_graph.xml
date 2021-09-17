@@ -8,17 +8,17 @@
     <fragment
         android:id="@+id/FirstFragment"
         android:name="com.example.vanzare_cumpararealpha.FirstFragment"
-        android:label="@string/first_fragment_label"
+        android:label="fragment_first"
         tools:layout="@layout/fragment_first">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            app:destination="@id/secondFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
+        android:id="@+id/secondFragment"
         android:name="com.example.vanzare_cumpararealpha.SecondFragment"
-        android:label="@string/second_fragment_label"
+        android:label="fragment_second"
         tools:layout="@layout/fragment_second">
 
         <action
@@ -27,6 +27,9 @@
         <action
             android:id="@+id/action_SecondFragment_to_thirdFragment"
             app:destination="@id/thirdFragment" />
+        <argument
+            android:name="seller"
+            app:argType="com.example.vanzare_cumpararealpha.User" />
     </fragment>
     <fragment
         android:id="@+id/thirdFragment"
@@ -35,7 +38,7 @@
         tools:layout="@layout/fragment_third" >
         <action
             android:id="@+id/action_thirdFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            app:destination="@id/secondFragment" />
         <action
             android:id="@+id/action_thirdFragment_to_fourthFragment"
             app:destination="@id/fourthFragment" />
@@ -75,6 +78,9 @@
             android:name="seller"
             app:argType="com.example.vanzare_cumpararealpha.User"
             app:nullable="true" />
+        <argument
+            android:name="buyer"
+            app:argType="com.example.vanzare_cumpararealpha.User" />
     </fragment>
     <fragment
         android:id="@+id/sixthFragment"

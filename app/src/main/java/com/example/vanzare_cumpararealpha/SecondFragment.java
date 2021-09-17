@@ -26,27 +26,25 @@ public class SecondFragment extends Fragment {
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+
+
+
         EditText sellerName = view.findViewById(R.id.nameTextBox);
         EditText sellerCounty = view.findViewById(R.id.countyTextBox);
         EditText sellerPostalCode = view.findViewById(R.id.postalCodeTextBox);
         EditText sellerCity = view.findViewById(R.id.cityTextBox);
         EditText sellerSector  = view.findViewById(R.id.sectorTextBox);
 
-        final NavController navController = Navigation.findNavController(view);
+        SecondFragmentArgs args = SecondFragmentArgs.fromBundle(getArguments());
+        User seller = args.getSeller();
 
-        view.findViewById(R.id.previousBtn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(SecondFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_FirstFragment);
-            }
-        });
+        final NavController navController = Navigation.findNavController(view);
 
         view.findViewById(R.id.nextBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view1) {
 
-                User seller = new User();
+               // User seller = new User();
                 seller.setName(sellerName.getText().toString());
                 seller.setCounty(sellerCounty.getText().toString());
                 seller.setPostalCode(sellerPostalCode.getText().toString());

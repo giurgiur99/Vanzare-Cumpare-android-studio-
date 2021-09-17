@@ -42,8 +42,7 @@ public class SeventhFragment extends Fragment {
         view.findViewById(R.id.previousBtn7).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(SeventhFragment.this)
-                        .navigate(R.id.action_seventhFragment_to_sixthFragment);
+               SeventhFragmentDirections.ActionSeventhFragmentToSixthFragment action = SeventhFragmentDirections.actionSeventhFragmentToSixthFragment(buyer, seller);
             }
         });
 

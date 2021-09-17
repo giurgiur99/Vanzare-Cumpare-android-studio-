@@ -43,8 +43,8 @@ public class TenthFragment extends Fragment {
         view.findViewById(R.id.previousBtn10).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(TenthFragment.this)
-                        .navigate(R.id.action_tenthFragment_to_nintethFragment);
+               TenthFragmentDirections.ActionTenthFragmentToNintethFragment action = TenthFragmentDirections.actionTenthFragmentToNintethFragment(buyer, seller);
+               navController.navigate(action);
             }
         });
 
@@ -60,7 +60,7 @@ public class TenthFragment extends Fragment {
                 car.setPriceLetters(priceLetters.getText().toString());
                 System.out.println(seller.toString() + "\n" + buyer.toString());
 
-                TenthFragmentDirections.ActionTenthFragmentToOverFragment action = TenthFragmentDirections.actionTenthFragmentToOverFragment(car, seller, buyer);
+                TenthFragmentDirections.ActionTenthFragmentToOverFragment action = TenthFragmentDirections.actionTenthFragmentToOverFragment(car, buyer, seller);
                 navController.navigate(action);
             }
         });

@@ -37,8 +37,8 @@ public class FourthFragment extends Fragment {
         view.findViewById(R.id.previousBtn2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(FourthFragment.this)
-                        .navigate(R.id.action_fourthFragment_to_thirdFragment);
+                FourthFragmentDirections.ActionFourthFragmentToThirdFragment action = FourthFragmentDirections.actionFourthFragmentToThirdFragment(seller);
+                navController.navigate(action);
             }
         });
 

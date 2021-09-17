@@ -32,24 +32,17 @@ public class NintethFragment extends Fragment {
         EditText capacity = view.findViewById(R.id.capacityTextBox);
         EditText licensePlate = view.findViewById(R.id.licensePlateTextBox);
 
+        NintethFragmentArgs args = NintethFragmentArgs.fromBundle(getArguments());
+        User buyer = args.getBuyer();
+        User seller = args.getSeller();
 
-        view.findViewById(R.id.previousBtn9).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(NintethFragment.this)
-                        .navigate(R.id.action_nintethFragment_to_eigthFragment);
-            }
-        });
+
 
         view.findViewById(R.id.nextBtn9).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view1) {
 
                 Car car = new Car();
-                assert getArguments() != null;
-                NintethFragmentArgs args = NintethFragmentArgs.fromBundle(getArguments());
-                User buyer = args.getBuyer();
-                User seller = args.getSeller();
 
                 System.out.println(seller.toString() + "\n" + buyer.toString());
 

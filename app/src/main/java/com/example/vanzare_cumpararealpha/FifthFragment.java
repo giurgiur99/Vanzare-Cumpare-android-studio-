@@ -35,21 +35,13 @@ public class FifthFragment extends Fragment {
         EditText buyerCity = view.findViewById(R.id.buyerCityTextBox);
         EditText buyerSector  = view.findViewById(R.id.buyerSectorTextBox);
 
-        view.findViewById(R.id.prevBtn5).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(FifthFragment.this)
-                        .navigate(R.id.action_fifthFragment5_to_sellerFragment);
-            }
-        });
-
         view.findViewById(R.id.nextBtn5).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view1) {
 
                 FifthFragmentArgs args = FifthFragmentArgs.fromBundle(getArguments());
                 User seller = args.getSeller();
-                User buyer = new User();
+                User buyer = args.getBuyer();
                 buyer.setName(buyerName.getText().toString());
                 buyer.setCounty(buyerCounty.getText().toString());
                 buyer.setPostalCode(buyerPostalCode.getText().toString());

@@ -31,8 +31,8 @@ public class SellerFragment extends Fragment  {
         view.findViewById(R.id.nextBtnSeller).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view1) {
-
-                SellerFragmentDirections.ActionSellerFragmentToFifthFragment5 action = SellerFragmentDirections.actionSellerFragmentToFifthFragment5(seller);
+                User buyer = new User();
+                SellerFragmentDirections.ActionSellerFragmentToFifthFragment5 action = SellerFragmentDirections.actionSellerFragmentToFifthFragment5(buyer, seller);
                 navController.navigate(action);
             }
         });
